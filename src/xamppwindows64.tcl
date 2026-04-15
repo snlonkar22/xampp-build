@@ -55,6 +55,17 @@
     }
 }
 
+::itcl::class windows64XamppVcredist2022 {
+    inherit windows64XamppVcredist
+    constructor {environment} {
+        chain $environment
+    } {
+        set version 2022
+        set vcVersion VS17
+        set tarballName vcredist_x64_${version}.exe
+    }
+}
+
 ::itcl::class windows64XamppApache {
     inherit windowsXamppApache
     constructor {environment} {
@@ -149,6 +160,14 @@
 	    chain $environment
     } {
         set tarballName httpd-${version}-win64-VS17.zip
+    }
+}
+
+::itcl::class windows64XamppApachePhp85 {
+    inherit windows64XamppApachePhp84
+    constructor {environment} {
+	    chain $environment
+    } {
     }
 }
 
@@ -375,6 +394,19 @@
         set tarballName php-${version}-Win32-${vcVersion}-x64.zip
     }
 }
+::itcl::class windows64XamppPhp85 {
+  inherit windows64XamppPhp8
+    constructor {environment} {
+        chain $environment
+    } {
+        set name windows64XamppPhp85
+        set version [::xampp::php::getXAMPPVersion 85]
+        set rev [::xampp::php::getXAMPPRevision 85]
+        set vcVersion vs17
+        set opensslVersion 1.1.1p
+        set tarballName php-${version}-Win32-${vcVersion}-x64.zip
+    }
+}
 
 ::itcl::class windows64XamppCurl {
   inherit windowsXamppComponent
@@ -382,7 +414,7 @@
         chain $environment
     } {
         set name windows64XamppCurl
-        set version 8.15.0_7
+        set version 8.19.0_1
         set licenseRelativePath {}
         set tarballName curl-${version}-win64-mingw
         set cacertificatesVersion [getVtrackerField cacertificates version frameworks]
@@ -686,7 +718,7 @@
     } {
 	addComponents bitnamiFiles nativeadapter windowsXamppWorkspace \
 	    windowsXamppHtdocs \
-	    windows64XamppVcredist2019 \
+	    windows64XamppVcredist2022 \
 	    windows64XamppApachePhp83 \
 	    windowsXamppApacheAddons \
 	    windowsXamppFileZillaFTP \
@@ -718,7 +750,7 @@
     } {
 	addComponents bitnamiFiles nativeadapter windowsXamppWorkspace \
 	    windowsXamppHtdocs \
-	    windows64XamppVcredist2019 \
+	    windows64XamppVcredist2022 \
 	    windows64XamppApachePhp84 \
 	    windowsXamppApacheAddons \
 	    windowsXamppFileZillaFTP \
@@ -740,6 +772,17 @@
 	    windowsXamppWebalizer \
 	    windowsXamppWebalizerAddons \
         windowsXamppStandardPhp84
+    }
+}
+
+::itcl::class windows64XamppInstallerPhp85Stack {
+    inherit windows64XamppInstallerPhp84Stack
+       constructor {environment} {
+        chain $environment
+       } {
+           replaceComponent windows64XamppApachePhp84 windows64XamppApachePhp85
+           replaceComponent windows64XamppPhp84 windows64XamppPhp85
+           replaceComponent windowsXamppStandardPhp84 windowsXamppStandardPhp85
     }
 }
 

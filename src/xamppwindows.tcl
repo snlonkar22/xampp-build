@@ -48,9 +48,9 @@
         chain $environment
     } {
         set name windowsXamppWorkspace
-        set version 10
+        set version 11
         set licenseRelativePath {}
-        set rev 15
+        set rev 0
         set controlPanelVersion "3.3.0"
         set tarballName xampp-windows-workspace-${version}-${rev}.zip
     }
@@ -93,7 +93,7 @@
         chain $environment
     } {
         set name windowsXamppHtdocs
-        set version 20221122
+        set version 20250916
         set rev 0
         set licenseRelativePath {}
         set tarballName xampp-htdocs-windows-${version}.tar.gz
@@ -533,7 +533,7 @@
         chain $environment
     } {
         set name windowsXamppMysql
-        set version 10.4-1
+        set version 10.11-0
         set licenseRelativePath {}
         set tarballName xampp-mariadbdata-win64-${version}.zip
         set mainComponentXMLName xampp-mysql
@@ -1249,7 +1249,18 @@ mssql.secure_connection=Off"
 	chain $environment
         set version [::xampp::php::getXAMPPVersion 84]
         set rev [::xampp::php::getXAMPPRevision 84]
-        set xampp_vcredist_name VS16
+        set xampp_vcredist_name VS17
+    } {
+    }
+}
+
+::itcl::class windowsXamppStandardPhp85 {
+    inherit windowsXamppStandardPhp7
+    constructor {environment} {
+	chain $environment
+        set version [::xampp::php::getXAMPPVersion 85]
+        set rev [::xampp::php::getXAMPPRevision 85]
+        set xampp_vcredist_name VS17
     } {
     }
 }

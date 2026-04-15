@@ -38,11 +38,11 @@
     <include file="environment-autodetection-functions.xml" />
     <include file="bitnami-functions.xml"/>
     <include file="xampp-functions.xml" />
+    <include file="xampp-vcredist.xml" />
     <include file="xampp-module-adapter.xml"/>
     <include file="native-apache-adapter.xml"/>
     <include file="native-mysql-adapter.xml"/>
     <include file="bitnami-xampp-shortcuts.xml"/>
-    <include file="xampp-vcredist.xml" />
     <include file="xampp-common.xml" />
     <include file="xampp-server.xml" />
     <include file="xampp-program-languages.xml" />

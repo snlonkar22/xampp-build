@@ -6,7 +6,7 @@ config = {
 }
 
 prog cacertificates = {
-  version = 2022-04-26
+  version = 2026-03-19
   url     = https://curl.haxx.se/docs/caextract.html
   regex   = cacert-(__VER__).pem
 }
@@ -22,7 +22,7 @@ prog composer = {
   regex   = tag/([0-9\\.]+(?!.*(alpha|beta|rc*|ALPHA|BETA|RC*)))
 }
 prog phpmyadmin = {
-  version = 5.2.1
+  version = 5.2.3
   url     = http://www.phpmyadmin.net/home_page/downloads.php
   regex   = ">phpMyAdmin (__VER__)</"
 }

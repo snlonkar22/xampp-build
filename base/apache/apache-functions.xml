@@ -1510,7 +1510,8 @@ ${app_banner_text}
                                   <waitForPort port="${web_server_port}" timeout="10000"/>
                               </actionList>
                               <ruleList>
-                                  <fileExists path="${installdir}/apache2/scripts/servicerun.bat" negate="1"/>
+                                <fileExists path="${installdir}/apache2/scripts/servicerun.bat" negate="1"/>
+                                <fileExists path="${installdir}/apache/scripts/ctl.bat" negate="1"/>
                               </ruleList>
                           </actionGroup>
                         </actionList>
@@ -1543,7 +1544,8 @@ ${app_banner_text}
                                   <waitForPort port="${web_server_port}" timeout="10000" state="free"/>
                               </actionList>
                               <ruleList>
-                                  <fileExists path="${installdir}/apache2/scripts/servicerun.bat" negate="1"/>
+                                <fileExists path="${installdir}/apache2/scripts/servicerun.bat" negate="1"/>
+                                <fileExists path="${installdir}/apache/scripts/ctl.bat" negate="1"/>
                               </ruleList>
                           </actionGroup>
                       </actionList>

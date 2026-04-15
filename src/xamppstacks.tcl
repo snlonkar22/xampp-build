@@ -177,6 +177,16 @@
     }
 }
 
+
+::itcl::class linuxXamppInstaller85Stack {
+    inherit linuxXamppInstaller83Stack
+    constructor {environment} {
+        chain $environment
+    } {
+        replaceComponent ::xampp::php83 ::xampp::php85
+    }
+}
+
 ::itcl::class linux64XamppInstallerStack {
     inherit linuxXamppInstallerStack
     constructor {environment} {
@@ -243,6 +253,13 @@
 
 ::itcl::class linux64XamppInstaller84Stack {
     inherit linuxXamppInstaller84Stack
+    constructor {environment} {
+        chain $environment
+    } {
+    }
+}
+::itcl::class linux64XamppInstaller85Stack {
+    inherit linuxXamppInstaller85Stack
     constructor {environment} {
         chain $environment
     } {
@@ -525,11 +542,26 @@ return
         set version [::xampp::php::getXAMPPVersion 84]
         set rev [::xampp::php::getXAMPPRevision 84]
         set application ::xampp::php84
-        set xampp_vcredist_name VS16
+        set xampp_vcredist_name VS17
     } {
     }
     public method getBaseNameForPlatform {} {
         return XamppInstallerPhp84Stack
+    }
+}
+
+::itcl::class xamppinstaller85stack {
+    inherit xamppinstallerstack
+    constructor {environment} {
+        chain $environment
+        set version [::xampp::php::getXAMPPVersion 85]
+        set rev [::xampp::php::getXAMPPRevision 85]
+        set application ::xampp::php85
+        set xampp_vcredist_name VS17
+    } {
+    }
+    public method getBaseNameForPlatform {} {
+        return XamppInstallerPhp85Stack
     }
 }
 
@@ -822,6 +854,23 @@ return
         return xamppinstallerphp84
     }
 }
+::itcl::class xamppunixinstaller85stack {
+    inherit xamppunixinstallerXstack
+    constructor {environment} {
+        chain $environment
+    } {
+        set version [::xampp::php::getXAMPPVersion 85]
+        set rev [::xampp::php::getXAMPPRevision 85]
+        set application ::xampp::php85
+    }
+    public method getBaseNameForPlatform {} {
+        return XamppInstaller85Stack
+    }
+    public method confFileName {} {
+        return xamppinstallerphp85
+    }
+}
+
 # XAMPP Installer - portable lite version
 ::itcl::class xamppportableinstallerstack {
     inherit product

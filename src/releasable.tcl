@@ -1020,8 +1020,10 @@
                     append linkFileName "-VC14"
                 } elseif {[::xampptcl::util::compareVersions $version 8.0.0] < 0} {
                     append linkFileName "-VC15"
+                } elseif {[::xampptcl::util::compareVersions $version 8.4.0] < 0} {
+                    append linkFileName "-VC16"
                 } else {
-                    append linkFileName "-VS16"
+                    append linkFileName "-VS17"
                 }
             } else {
                 set linkFileName "xampp-[$be cget -target]-${version}-${revSuffix}"

@@ -1,6 +1,6 @@
 FROM docker.io/centos:7.9.2009
 LABEL maintainer="Apache Friends"
-ARG IB_VERSION=25.10.1
+ARG IB_VERSION=26.4.0
 
 # Fix CentOS 7 mirror URLs to use vault.centos.org
 RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*.repo && \

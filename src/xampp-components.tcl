@@ -1161,7 +1161,7 @@ UseFtpUsers}]
 		set platform linux
 	    }
             set name "xampp-htdocs-$platform"
-            set version 20221122
+            set version 20250916
             set rev 0
             set tarballName $name-$version.tar.gz
             set licenseRelativePath ""
@@ -2539,7 +2539,8 @@ $cfg['Servers'][$i]['favorite'] = 'pma__favorite';} \
                 8.1 - 81 { return [versions::get "PHP" 81] }
                 8.2 - 82 { return [versions::get "PHP" 82] }
                 8.3 - 83 { return [versions::get "PHP" 83] }
-                8.4 - 84 { return [versions::get "PHP" 84] }		
+                8.4 - 84 { return [versions::get "PHP" 84] }
+                8.5 - 85 { return [versions::get "PHP" 85] }
             }
         }
 
@@ -2550,7 +2551,8 @@ $cfg['Servers'][$i]['favorite'] = 'pma__favorite';} \
                 8.1 - 81 { return [revisions::get "xamppstack" 81] }
                 8.2 - 82 { return [revisions::get "xamppstack" 82] }
                 8.3 - 83 { return [revisions::get "xamppstack" 83] }
-                8.4 - 84 { return [revisions::get "xamppstack" 84] }		
+                8.4 - 84 { return [revisions::get "xamppstack" 84] }
+                8.5 - 85 { return [revisions::get "xamppstack" 85] }
             }
         }
         public method configureOptions {} {
@@ -2792,4 +2794,17 @@ $cfg['Servers'][$i]['favorite'] = 'pma__favorite';} \
             }
         }
     }
+    ::itcl::class php85 {
+        inherit php
+        constructor {environment} {
+            chain $environment
+        } {
+            set vtrackerName XAMPP85
+            set version [::xampp::php::getXAMPPVersion 85]
+            if {[string match osx* [$be cget -target]]} {
+                set patchList {fix-opcache-support-php-8.OS-X.patch}
+            }
+        }
+    }
+
 }
