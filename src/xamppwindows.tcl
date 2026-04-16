@@ -1238,7 +1238,7 @@ mssql.secure_connection=Off"
 	chain $environment
         set version [::xampp::php::getXAMPPVersion 83]
         set rev [::xampp::php::getXAMPPRevision 83]
-        set xampp_vcredist_name VS16
+        set xampp_vcredist_name vs16
     } {
     }
 }
@@ -1249,7 +1249,7 @@ mssql.secure_connection=Off"
 	chain $environment
         set version [::xampp::php::getXAMPPVersion 84]
         set rev [::xampp::php::getXAMPPRevision 84]
-        set xampp_vcredist_name VS17
+        set xampp_vcredist_name vs17
     } {
     }
 }
@@ -1260,7 +1260,7 @@ mssql.secure_connection=Off"
 	chain $environment
         set version [::xampp::php::getXAMPPVersion 85]
         set rev [::xampp::php::getXAMPPRevision 85]
-        set xampp_vcredist_name VS17
+        set xampp_vcredist_name vs17
     } {
     }
 }
