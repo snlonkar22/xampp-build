@@ -82,7 +82,7 @@ proc pearProgram {name args} {
         lappend additionalFileList vcredist_x64_2008.exe vcredist_x64_2012.exe vcredist_x64_2015.exe vcredist_x64_2017.exe vcredist_x64_2019.exe vcredist_x64_2022.exe lamp56.tar.gz php/php5apache2_4.dll composer-$composerVersion.phar composer-license.txt windowstools/vcredist/msvcr110.dll windowstools/vcredist/msvcp110.dll
     }
     public method extractDirectory {} {
-        if { [string match *Win32-VC6-x* $tarballName] || [string match *Win32-VC9-x* $tarballName] || [string match *Win32-VC1\[145\]-x* $tarballName] || [string match *Win32-VS1\[6\]-x* $tarballName]} {
+        if { [string match *Win32-VC6-x* $tarballName] || [string match *Win32-VC9-x* $tarballName] || [string match *Win32-VC1\[145\]-x* $tarballName] || [string match *Win32-VS1\[6\]-x* $tarballName] || [string match *Win32-vs16-x* $tarballName] || [string match *Win32-VS16-x* $tarballName] || [string match *Win32-vs17-x* $tarballName] || [string match *Win32-VS17-x* $tarballName]} {
             return [srcdir]
         } else {
             return [$be cget -src]

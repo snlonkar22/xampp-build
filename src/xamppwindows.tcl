@@ -514,7 +514,7 @@
     } {
         set name windowsXamppMariaDb
         set fullname MariaDB
-        set version [versions::get "MariaDB" "10"]
+        set version [versions::get "MariaDB" "12"]
         set tarballName mariadb-${version}-win32.zip
         set pathName mariadb-${version}-win32
     }
@@ -659,7 +659,7 @@
     } {
         set name windowsXamppPhp
         set fullname PHP
-        set version [::xampp::php::getXAMPPVersion 55]
+        set version [::xampp::php::getXAMPPVersion 74]
         set vcVersion VC11
         set opensslVersion 1.0.2j
         set licenseRelativePath {}
@@ -1064,8 +1064,8 @@ mssql.secure_connection=Off"
         chain $environment
     } {
         set name xampp
-        set version [::xampp::php::getXAMPPVersion 55]
-        set rev [::xampp::php::getXAMPPRevision 55]
+        set version [::xampp::php::getXAMPPVersion 74]
+        set rev [::xampp::php::getXAMPPRevision 74]
         set licenseRelativePath {}
         set tarballName {}
     }
@@ -1273,8 +1273,8 @@ mssql.secure_connection=Off"
         chain $environment
     } {
         set name xampp
-        set version [::xampp::php::getXAMPPVersion 55]
-        set rev [::xampp::php::getXAMPPRevision 55]
+        set version [::xampp::php::getXAMPPVersion 74]
+        set rev [::xampp::php::getXAMPPRevision 74]
         set licenseRelativePath {}
         set tarballName {}
         #set dependencies {xampp {xampp.xml}}

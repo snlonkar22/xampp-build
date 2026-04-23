@@ -1,4 +1,4 @@
-::itcl::class linuxXamppInstallerStack {
+::itcl::class linuxXamppInstallerCoreStack {
     inherit stack
     public variable pearModulesList {}
        constructor {environment} {
@@ -97,7 +97,7 @@
 }
 
 ::itcl::class linuxXamppInstallerXStack {
-    inherit linuxXamppInstallerStack
+    inherit linuxXamppInstallerCoreStack
     constructor {environment} {
         chain $environment
     } {
@@ -179,11 +179,19 @@
 
 
 ::itcl::class linuxXamppInstaller85Stack {
-    inherit linuxXamppInstaller83Stack
+    inherit linuxXamppInstaller84Stack
     constructor {environment} {
         chain $environment
     } {
-        replaceComponent ::xampp::php83 ::xampp::php85
+        replaceComponent ::xampp::php84 ::xampp::php85
+    }
+}
+
+::itcl::class linuxXamppInstallerStack {
+    inherit linuxXamppInstaller85Stack
+    constructor {environment} {
+        chain $environment
+    } {
     }
 }
 
@@ -387,7 +395,7 @@
     } {
         set fullname XAMPP
         set name xampp
-        set version [::xampp::php::getXAMPPVersion 55]
+        set version [::xampp::php::getXAMPPVersion 85]
         set projectFile xampp-installer-standalone.xml
         set programming_language PHP
         lappend tags MySQL Apache PHP Tomcat
@@ -882,8 +890,8 @@ return
         $targetInstance configure -kind portable
         set fullname "XAMPP Portable Lite"
         set name xampp
-        set version [::xampp::php::getXAMPPVersion 55]
-        set rev [::xampp::php::getXAMPPRevision 55]
+        set version [::xampp::php::getXAMPPVersion 85]
+        set rev [::xampp::php::getXAMPPRevision 85]
         set projectFile xampp-installer-portable-standalone.xml
         set programming_language PHP
         lappend tags MySQL Apache PHP Tomcat

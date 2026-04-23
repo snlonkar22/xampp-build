@@ -328,9 +328,9 @@ mysqld_ld_library_path=@@XAMPP_MYSQL_ROOTDIR@@/lib}]
         set osxVersion $version
         regexp -- {^(.*\..*)\..*$} $version - urlFolder
         if {[$be cget -target] == "linux"} {
-            set downloadUrl http://dev.mysql.com/get/Downloads/MySQL-${urlFolder}/mysql-${version}-linux-glibc2.12-i686.tar.gz
+            set downloadUrl https://dev.mysql.com/get/Downloads/MySQL-${urlFolder}/mysql-${version}-linux-glibc2.12-i686.tar.gz
         } else {
-            set downloadUrl http://dev.mysql.com/get/Downloads/MySQL-${urlFolder}/mysql-${version}-linux-glibc2.12-x86_64.tar.gz
+            set downloadUrl https://dev.mysql.com/get/Downloads/MySQL-${urlFolder}/mysql-${version}-linux-glibc2.12-x86_64.tar.gz
         }
     }
     public method getTarballName {} {
@@ -353,9 +353,9 @@ mysqld_ld_library_path=@@XAMPP_MYSQL_ROOTDIR@@/lib}]
         set osxVersion $version
         regexp -- {^(.*\..*)\..*$} $version - urlFolder
         if {[$be cget -target] == "linux"} {
-            set downloadUrl http://dev.mysql.com/get/Downloads/MySQL-${urlFolder}/mysql-${version}-linux-glibc2.12-i686.tar.gz
+            set downloadUrl https://dev.mysql.com/get/Downloads/MySQL-${urlFolder}/mysql-${version}-linux-glibc2.12-i686.tar.gz
         } else {
-            set downloadUrl http://dev.mysql.com/get/Downloads/MySQL-${urlFolder}/mysql-${version}-linux-glibc2.12-x86_64.tar.gz
+            set downloadUrl https://dev.mysql.com/get/Downloads/MySQL-${urlFolder}/mysql-${version}-linux-glibc2.12-x86_64.tar.gz
         }
     }
 }
@@ -369,9 +369,9 @@ mysqld_ld_library_path=@@XAMPP_MYSQL_ROOTDIR@@/lib}]
         set licenseRelativePath LICENSE
         regexp -- {^(.*\..*)\..*$} $version - urlFolder
         if {[$be cget -target] == "linux"} {
-            set downloadUrl http://dev.mysql.com/get/Downloads/MySQL-${urlFolder}/mysql-${version}-linux-glibc2.12-i686.tar.gz
+            set downloadUrl https://dev.mysql.com/get/Downloads/MySQL-${urlFolder}/mysql-${version}-linux-glibc2.12-i686.tar.gz
         } else {
-            set downloadUrl http://dev.mysql.com/get/Downloads/MySQL-${urlFolder}/mysql-${version}-linux-glibc2.12-x86_64.tar.gz
+            set downloadUrl https://dev.mysql.com/get/Downloads/MySQL-${urlFolder}/mysql-${version}-linux-glibc2.12-x86_64.tar.gz
         }
     }
     public method preparefordist {} {
@@ -463,7 +463,7 @@ mysqld_ld_library_path=@@XAMPP_MYSQL_ROOTDIR@@/lib}]
     constructor {environment} {
         chain $environment
     } {
-        set version [versions::get "MariaDB" 10]
+        set version [versions::get "MariaDB" 12]
         set osxVersion $version
         regexp -- {^(.*\..*)\..*$} $version - urlFolder
     }
@@ -688,7 +688,7 @@ no-auto-rehash
        chain $environment
     } {
         set version [versions::get "MySQL" 56]
-        set downloadUrl http://dev.mysql.com/get/Downloads/MySQL-${urlFolder}/mysql-${version}-winx64.zip
+        set downloadUrl https://dev.mysql.com/get/Downloads/MySQL-${urlFolder}/mysql-${version}-winx64.zip
     }
     public method getTarballName {} {
         return mysql-${version}-winx64
@@ -740,7 +740,7 @@ no-auto-rehash
        chain $environment
     } {
         set version [versions::get "MySQL" 57]
-        set downloadUrl http://dev.mysql.com/get/Downloads/MySQL-${urlFolder}/mysql-${version}-winx64.zip
+        set downloadUrl https://dev.mysql.com/get/Downloads/MySQL-${urlFolder}/mysql-${version}-winx64.zip
     }
 }
 
@@ -751,7 +751,7 @@ no-auto-rehash
     } {
         set version [versions::get "MySQL" 80]
         set licenseRelativePath LICENSE
-        set downloadUrl http://dev.mysql.com/get/Downloads/MySQL-${urlFolder}/mysql-${version}-winx64.zip
+        set downloadUrl https://dev.mysql.com/get/Downloads/MySQL-${urlFolder}/mysql-${version}-winx64.zip
         lappend additionalFileList vcruntime140_1.dll
     }
      public method preparefordist {} {
@@ -773,7 +773,7 @@ no-auto-rehash
         set uniqueIdentifier mariadb
         set readmePlaceholder MARIADB
         set licenseRelativePath COPYING
-        set version [versions::get "MariaDB" 10]
+        set version [versions::get "MariaDB" 12]
         $be configure -setvars "[$be cget -setvars] mysql_database_type=MariaDB"
         lappend additionalFileList vcruntime140_1.dll
     }
@@ -899,7 +899,7 @@ no-auto-rehash
         chain $environment
     } {
         set name mariadb
-        set version [versions::get "MariaDB" 10]
+        set version [versions::get "MariaDB" 12]
         set supportsParallelBuild 0
         set patchList {TokuDB-MacOS.patch mariadb-clock_realtime.patch}
     }

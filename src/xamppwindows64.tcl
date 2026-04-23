@@ -203,7 +203,7 @@
     } {
         set name windows64XamppMariaDb
         set fullname MariaDB
-        set version [versions::get "MariaDB" "10"]
+        set version [versions::get "MariaDB" "12"]
         set tarballName mariadb-${version}-winx64.zip
         set pathName mariadb-${version}-winx64
         lappend additionalFileList vcruntime140_1.dll
@@ -251,7 +251,7 @@
     } {
         set name windows64XamppPhp
         set fullname PHP
-        set version [::xampp::php::getXAMPPVersion 55]
+        set version [::xampp::php::getXAMPPVersion 74]
         set vcVersion VC11
         set opensslVersion 1.0.2j
         set licenseRelativePath {}
@@ -549,39 +549,6 @@
     }
 }
 
-::itcl::class windows64XamppInstallerStack {
-    inherit stack
-       constructor {environment} {
-        chain $environment
-    } {
-	addComponents bitnamiFiles nativeadapter windowsXamppWorkspace \
-	    windowsXamppHtdocs \
-	    windows64XamppVcredist \
-	    windows64XamppApache \
-	    windowsXamppApacheAddons \
-	    windowsXamppFileZillaFTP \
-	    windowsXamppFileZillaFTPSource \
-	    windowsXamppMercuryMail \
-	    windowsXamppMercuryMailAddons \
-	    windowsXamppSendmail \
-	    windows64XamppMariaDb \
-	    windowsXamppMysqlData \
-	    windows64XamppPerl \
-	    windowsXamppPerlAddons \
-	    windows64XamppPhp \
-	    windows64XamppPhpAddons \
-	    windows64XamppPhpXdebug \
-	    windowsXamppPhpPear \
-	    windowsXamppPhpADODB \
-	    windowsXamppPhpMyAdmin \
-	    windows64XamppCurl \
-	    windows64XamppTomcat \
-	    windowsXamppWebalizer \
-	    windowsXamppWebalizerAddons \
-	    windowsXamppStandard
-    }
-}
-
 ::itcl::class windows64XamppInstallerPhp74Stack {
     inherit stack
        constructor {environment} {
@@ -783,6 +750,14 @@
            replaceComponent windows64XamppApachePhp84 windows64XamppApachePhp85
            replaceComponent windows64XamppPhp84 windows64XamppPhp85
            replaceComponent windowsXamppStandardPhp84 windowsXamppStandardPhp85
+    }
+}
+
+::itcl::class windows64XamppInstallerStack {
+    inherit windows64XamppInstallerPhp85Stack
+    constructor {environment} {
+        chain $environment
+    } {
     }
 }
 

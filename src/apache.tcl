@@ -82,12 +82,12 @@
         set dependencies {openssl {openssl-functions.xml openssl.xml openssl-without-apache.xml}}
         set readmePlaceholder OPENSSL
         set downloadType wget
-        set downloadUrl http://www.openssl.org/source/openssl-$version.tar.gz
+        set downloadUrl https://www.openssl.org/source/openssl-$version.tar.gz
     }
     public method download {} {
         set version  [getVersionFromVtracker]
         set downloadType wget
-        set downloadUrl http://www.openssl.org/source/openssl-$version.tar.gz
+        set downloadUrl https://www.openssl.org/source/openssl-$version.tar.gz
         chain
     }
     public method prefix {} {
@@ -151,7 +151,7 @@
     } {
         set supportsParallelBuild 0   ;# Apparently only FreeBSD stuff. But its better to disable it on all platforms
         set licenseRelativePath LICENSE
-        set licenseNotes http://www.openssl.org/source/license.html
+        set licenseNotes https://www.openssl.org/source/license.html
     }
     public method getPatchesToApply {} {
         if { [$be cget -target] == "osx-x64" && [::xampptcl::util::compareVersions $version 1.0.2g] == 0 } {
@@ -217,7 +217,7 @@
         # https://www.openssl.org/docs/man1.1.1/man1/openssl-rand.html
         exec [prefix]/bin/openssl rand -out [file join [rndFileInstallDir] .rnd] [expr {int(rand()*1000)}]
         if { ![file exists [file join [rndFileInstallDir] .rnd]] } {
-            message error "seeding file not found - http://www.openssl.org/support/faq.html#USER1"
+            message error "seeding file not found - https://www.openssl.org/support/faq.html#USER1"
         }
 
         file rename -force [prefix]/bin/openssl [prefix]/bin/openssl.bin

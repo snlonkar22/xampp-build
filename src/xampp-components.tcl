@@ -1651,7 +1651,7 @@ UseFtpUsers}]
             set version 2.8.17
             set readmePlaceholder SQLITE
             set licenseRelativePath {}
-            set licenseNotes http://www.sqlite.org/copyright.html
+            set licenseNotes https://www.sqlite.org/copyright.html
 
         }
         public method setEnvironment {} {
@@ -1702,7 +1702,7 @@ UseFtpUsers}]
             }
             set tarballVersion "${majorVersion}${tailVersion}00"
             set tarballName "${name}-autoconf-${tarballVersion}"
-            set licenseNotes http://www.sqlite.org/copyright.html
+            set licenseNotes https://www.sqlite.org/copyright.html
 
         }
         public method setEnvironment {} {
@@ -1828,7 +1828,7 @@ UseFtpUsers}]
         } {
             set name "mariadb"
             set fullname MariaDB
-            set version [versions::get "MariaDB" "10"]
+            set version [versions::get "MariaDB" "12"]
             if {[$be targetPlatform] == "osx-x64"} {
                 set patchList {TokuDB-MacOS.patch mariadb-clock_realtime.patch}
             }
@@ -2527,7 +2527,7 @@ $cfg['Servers'][$i]['favorite'] = 'pma__favorite';} \
         } {
             set name "php"
             set fullname PHP
-            set version [::xampp::php::getXAMPPVersion 74]
+            set version [::xampp::php::getXAMPPVersion 85]
             set licenseRelativePath LICENSE
             set supportsParallelBuild 0
         }
@@ -2604,10 +2604,10 @@ $cfg['Servers'][$i]['favorite'] = 'pma__favorite';} \
             #Avoid php 5.4.25 download install-pear-nozlib.phar
             if {[::xampptcl::util::compareVersions $version 7.4.0] < 0} {
                 xampptcl::util::substituteParametersInFile [file join [srcdir] makedist]  \
-                    [list {wget http://pear.php.net/install-pear-nozlib.phar -nd -P pear/} {ls pear/install-pear-nozlib.phar}]
+                    [list {wget https://pear.php.net/install-pear-nozlib.phar -nd -P pear/} {ls pear/install-pear-nozlib.phar}]
             }  else {
                 xampptcl::util::substituteParametersInFile [file join [srcdir] scripts dev makedist]  \
-                    [list {wget http://pear.php.net/install-pear-nozlib.phar -nd -P pear/} {ls pear/install-pear-nozlib.phar}]
+                    [list {wget https://pear.php.net/install-pear-nozlib.phar -nd -P pear/} {ls pear/install-pear-nozlib.phar}]
             }
 
             showEnvironmentVars
